@@ -4,7 +4,7 @@ import { SliderService } from "./slider.service";
 import { SliderResolver } from "./slider.resolver";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { SliderEntity } from "./slider.entity";
-
+ 
 @Module({
   imports: [TypeOrmModule.forFeature([SliderEntity])],
   controllers: [SliderController],
