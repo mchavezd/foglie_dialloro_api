@@ -1,0 +1,175 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type SuccessResponse {
+  success: Boolean!
+}
+
+type FileEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  url: String!
+  width: Float!
+  height: Float!
+}
+
+type MemberEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  firstNameAz: String!
+  firstNameEn: String!
+  firstNameRu: String!
+  lastNameAz: String!
+  lastNameEn: String!
+  lastNameRu: String!
+  positionAz: String!
+  positionEn: String!
+  positionRu: String!
+  image: FileEntity!
+}
+
+type PostEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  titleAz: String!
+  titleEn: String!
+  titleRu: String!
+  descriptionAz: String!
+  descriptionEn: String!
+  descriptionRu: String!
+  contentAz: String!
+  contentEn: String!
+  contentRu: String!
+  image: FileEntity!
+}
+
+type PaginatedPostResponse {
+  data: [PostEntity!]!
+  count: Int!
+  total: Int!
+  page: Int!
+  pageCount: Int!
+}
+
+type ProjectEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  titleAz: String!
+  titleEn: String!
+  titleRu: String!
+  noContent: Boolean!
+  clientAz: String
+  clientEn: String
+  clientRu: String
+  locationAz: String
+  locationEn: String
+  locationRu: String
+  scaleAz: String
+  scaleEn: String
+  scaleRu: String
+  date: String
+  contentAz: String
+  contentEn: String
+  contentRu: String
+  image: FileEntity!
+  category: CategoryEntity!
+}
+
+type CategoryEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  nameAz: String!
+  nameEn: String!
+  nameRu: String!
+  parent: CategoryEntity
+  children: [CategoryEntity!]!
+  projects: [ProjectEntity!]!
+}
+
+type PaginatedProjectResponse {
+  data: [ProjectEntity!]!
+  count: Int!
+  total: Int!
+  page: Int!
+  pageCount: Int!
+}
+
+type AboutEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  titleAz: String!
+  titleEn: String!
+  titleRu: String!
+  textAz: String!
+  textEn: String!
+  textRu: String!
+  image: FileEntity!
+  image1: FileEntity!
+  image2: FileEntity!
+  image3: FileEntity!
+  image4: FileEntity!
+}
+
+type PricingEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  titleAz: String!
+  titleEn: String!
+  titleRu: String!
+  descriptionAz: String!
+  descriptionEn: String!
+  descriptionRu: String!
+}
+
+type SliderEntity {
+  id: Float!
+  createdDate: String!
+  updatedDate: String!
+  version: Float!
+  titleAz: String!
+  titleEn: String!
+  titleRu: String!
+  subtitleAz: String!
+  subtitleEn: String!
+  subtitleRu: String!
+  descriptionAz: String!
+  descriptionEn: String!
+  descriptionRu: String!
+  image: FileEntity!
+}
+
+type InstagramImage {
+  id: String!
+  media_type: String!
+  media_url: String!
+}
+
+type Query {
+  members: [MemberEntity!]!
+  post(id: Float!): PostEntity!
+  posts(take: Float!, skip: Float!): PaginatedPostResponse!
+  relatedPosts(id: Float!): [PostEntity!]!
+  categories: [CategoryEntity!]!
+  project(id: Float!): ProjectEntity!
+  projects(categoryId: String!, take: Float!, skip: Float!): PaginatedProjectResponse!
+  about: AboutEntity!
+  pricings: [PricingEntity!]!
+  sendMail(message: String!, email: String!, name: String!): SuccessResponse!
+  slider: [SliderEntity!]!
+  instagramImages: [InstagramImage!]!
+}
