@@ -4,7 +4,7 @@ import { CrudValidationGroups } from "@nestjsx/crud";
 import { BasicEntity } from "../core/basic_entity";
 import { Field, ObjectType } from "@nestjs/graphql";
 import { ProjectEntity } from "../project/project.entity";
-
+ 
 const { CREATE, UPDATE } = CrudValidationGroups;
 
 @ObjectType()
