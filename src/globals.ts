@@ -7,7 +7,7 @@ export const s3 = new AWS.S3({
   accessKeyId: "AKIAV27XGHHNYIB4OJA2",
   secretAccessKey: "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",
 });
-
+ 
 export const multerOptions: multerS3.MulterOptions = {
   storage: multerS3({
     s3: s3,
