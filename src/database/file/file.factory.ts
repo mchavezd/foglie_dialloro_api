@@ -1,7 +1,7 @@
 import { FileEntity } from "src/file/file.entity";
 import { define } from "typeorm-seeding";
 // import { FileEntity } from "../../../dist/file/file.entity";
-
+ 
 define(FileEntity, () => {
   const image = new FileEntity();
 
