@@ -15,3 +15,4 @@ export default class CreateMember implements Seeder {
       .seedMany(8);
   }
 }
+ 
