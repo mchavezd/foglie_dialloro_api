@@ -7,7 +7,7 @@ import { PostsResolver } from "./post.resolver";
 
 @Module({
   imports: [TypeOrmModule.forFeature([PostEntity])],
-  controllers: [PostsController],
+  controllers: [PostsController], 
   providers: [PostsService, PostsResolver],
 })
 export class PostsModule {}
