@@ -20,7 +20,7 @@ export class UserService extends TypeOrmCrudService<UserEntity> {
   }
 
   async onModuleInit() {
-    const email = "admin@mail.com";
+    const email = "admin@mail.com"; 
 
     const firstUser = await this.repo.findOne({
       email,
